@@ -394,7 +394,7 @@ static smt_status_t satisfy_context(context_t *ctx, const param_t *parameters, t
 
   assert(context_status(ctx) == STATUS_IDLE);
 
-  stat = check_context(ctx, parameters);
+  stat = check_with_delegate(ctx, "cryptominisat", 9);
   switch (stat) {
   case STATUS_SAT:
   case STATUS_UNKNOWN:
